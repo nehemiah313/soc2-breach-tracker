@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOC 2 Why It Matters: Breach Cost Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1>SOC 2: Why It Matters</h1>
+    <p class="subtitle">A breach cost tracker for teams making the case for SOC 2 readiness.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h2>Why companies pursue SOC 2</h2>
+    <p>
+      A SOC 2 report gives customers independent assurance that a service provider's controls are
+      designed well and operating effectively. Enterprise buyers increasingly require one before
+      they will trust a vendor with their data, so SOC 2 often becomes the key that unlocks larger
+      deals. It also forces the discipline that prevents the incidents below: access controls,
+      monitoring, incident response, vendor oversight, and honest breach communication.
+    </p>
+    <p>
+      The incidents listed here are real, publicly reported events. The figures are reported costs,
+      settlements, fines, or ransom payments from the cited sources, shown so teams can see what
+      weak controls actually cost. They are not predictions, and every incident is different.
+    </p>
+    <p class="disclaimer">
+      Educational aid only. Figures are reported costs from cited sources, not predictions.
+      Not an audit, attestation, CPA opinion, or legal advice.
+    </p>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Sum of listed incident costs</div>
+      <div class="stat-value" id="runningTotal">...</div>
+      <div class="stat-note">Computed from this dataset only; not a market estimate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Incidents tracked</div>
+      <div class="stat-value" id="incidentCount">...</div>
+      <div class="stat-note">2018 through 2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Industry benchmark</div>
+      <div class="stat-value" id="benchmarkValue">...</div>
+      <div class="stat-note" id="benchmarkNote">...</div>
+    </div>
+  </section>
+
+  <section class="benchmarks">
+    <h2>Industry benchmarks</h2>
+    <div id="benchmarkList" class="benchmark-list"></div>
+  </section>
+
+  <section class="controls">
+    <input type="search" id="searchBox" placeholder="Search company, sector, or description..." aria-label="Search breaches">
+    <select id="yearFilter" aria-label="Filter by year">
+      <option value="">All years</option>
+    </select>
+    <select id="sortBy" aria-label="Sort breaches">
+      <option value="cost_desc">Sort: cost, highest first</option>
+      <option value="cost_asc">Sort: cost, lowest first</option>
+      <option value="year_desc">Sort: year, newest first</option>
+      <option value="year_asc">Sort: year, oldest first</option>
+      <option value="company_asc">Sort: company, A to Z</option>
+    </select>
+  </section>
+
+  <section id="breachList" class="breach-list"></section>
+
+  <section class="about-criteria">
+    <h2>About the SOC 2 criteria tags</h2>
+    <p>
+      Each incident is tagged with the Trust Services Criteria that most closely relate to the
+      control failure described in public reporting. These tags are illustrative, not findings:
+      they show which criteria a SOC 2 engagement would have examined, so teams can see how
+      readiness work maps to real incidents. Criterion titles come from the
+      <a href="https://github.com/nehemiah313/tsc-dataset">TSC dataset</a> (61 criteria).
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Built by AI Tech Pros. Dataset: <a href="https://github.com/nehemiah313/tsc-dataset">github.com/nehemiah313/tsc-dataset</a></p>
+    <p class="disclaimer">Educational aid only. Figures are reported costs from cited sources, not predictions. Not an audit, attestation, CPA opinion, or legal advice.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
